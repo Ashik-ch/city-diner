@@ -21,6 +21,8 @@ body {
 }
 /* HERO */.menu-layout {
   display: flex;
+  padding: 150px 0 100px;
+
   min-height: 100vh;
   
 }

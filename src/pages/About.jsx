@@ -12,8 +12,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="about-image glass-panel">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1000" alt="Restaurant Ambiance" className="ambiance-img" />
-          </div>
+            <img src="https://b.zmtcdn.com/data/reviews_photos/686/c6cff6f63994941ddb57da276d61c686_1520970182.jpg"/></div>
           
           <div className="about-content">
             <h4 className="subtitle">Our Story</h4>

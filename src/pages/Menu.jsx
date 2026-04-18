@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { menuCategories } from "../menu.data";
-import "./Menu.css";
+import "./Menu.css"; 
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState(
@@ -35,7 +35,7 @@ const Menu = () => {
       </aside>
 
       {/* RIGHT CONTENT */}
-      <main className="menu-content">
+      <div className="menu-content">
 
         {/* CATEGORY HEADER */}
         <header className="menu-hero">
@@ -60,7 +60,6 @@ const Menu = () => {
             >
               <div className="img-wrap">
                 <img src={item.img} alt={item.name} />
-
                 <span className="price">
                   {item.currency} {item.price}
                 </span>
@@ -69,16 +68,13 @@ const Menu = () => {
               <div className="content">
                 <h3>{item.name}</h3>
                 <p>{item.desc}</p>
-
-                <button className="btn">
-                  Add to Order
-                </button>
+                <button className="btn">Add to Order</button>
               </div>
             </motion.div>
           ))}
         </div>
 
-      </main>
+      </div>
     </div>
   );
 };
