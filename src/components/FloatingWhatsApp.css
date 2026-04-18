@@ -1,0 +1,63 @@
+.floating-wa {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-wa:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  color: white;
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 75px;
+  background: rgba(15, 15, 17, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid var(--glass-border);
+}
+
+.floating-wa:hover .wa-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+@media (max-width: 768px) {
+  .floating-wa {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-wa svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .wa-tooltip {
+    display: none;
+  }
+}

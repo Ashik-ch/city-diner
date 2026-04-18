@@ -1,0 +1,205 @@
+:root {
+  --text: #0f172a;
+  --muted: rgba(15, 23, 42, 0.65);
+  --glass: rgba(255, 255, 255, 0.10);
+  --stroke: rgba(255, 255, 255, 0.15);
+
+  --a1: #ffffff;
+  --a2: #acb2b8;
+  --a3: #d8ff4d;
+}
+
+/* BACKGROUND (WOW cinematic glow) */
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 45, 117, 0.05), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.03), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(124, 77, 255, 0.02), transparent 50%),
+    linear-gradient(135deg, #0b0f1a 0%, #0f172a 100%);
+  color: white;
+  font-family: Inter, sans-serif;
+}
+/* HERO */.menu-layout {
+  display: flex;
+  min-height: 100vh;
+  
+}
+
+/* SIDEBAR */
+.menu-sidebar {
+  width: 240px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* CATEGORY LIST */
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-item {
+  padding: 12px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.sidebar-item:hover {
+  transform: translateX(5px);
+  background: rgba(255,255,255,0.08);
+}
+
+.sidebar-item.active {
+  background: linear-gradient(90deg,  var(--a1), var(--a2));
+  color: black;
+  font-weight: 600;
+}
+
+/* RIGHT CONTENT */
+.menu-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* HERO */
+.menu-hero {
+  margin-bottom: 25px;
+}
+
+.menu-hero span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.menu-hero h1 {
+  font-size: 34px;
+  margin-top: 8px;
+}
+
+.menu-hero h1 span {
+  background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu-hero p {
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
+/* GRID */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.menu-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.img-wrap {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.menu-card:hover img {
+  transform: scale(1.1);
+}
+
+/* PRICE */
+.price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* CONTENT */
+.content {
+  padding: 14px;
+}
+
+.content h3 {
+  font-size: 15px;
+}
+
+.content p {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, var(--a1), var(--a2));
+  color: black;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-layout {
+    flex-direction: column;
+  }
+
+  .menu-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .sidebar-list {
+    flex-direction: row;
+  }
+}
