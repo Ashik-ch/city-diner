@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { menuCategories } from "../menu.data";
 import bgImage from "../assets/bgImage3.jpg";
 
-const Menu = () => {
+const Menu = ({ onAddToCart }) => {
+  console.log("onAddToCart");
+  
   const MotionDiv = motion.div;
   const [activeCategory, setActiveCategory] = useState(
     menuCategories[0].name
@@ -79,7 +81,10 @@ const Menu = () => {
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-white">{item.name}</h3>
                   <p className="mt-1 text-sm text-slate-300">{item.desc}</p>
-                  <button className="mt-3 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20">
+                  <button
+                    onClick={() => onAddToCart?.(item.id)}
+                    className="mt-3 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                  >
                     Add to Order
                   </button>
                 </div>

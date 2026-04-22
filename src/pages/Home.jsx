@@ -104,14 +104,16 @@ const Home = () => {
               </motion.p>
 
               <MotionDiv variants={fadeUp} className="flex flex-wrap gap-3">
-                <button className="flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white shadow-lg backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
+                <a href="#/menu" className="flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white shadow-lg backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
                   Explore Menu <ArrowRight size={18} />
-                </button>
-
-                <button className="flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
+                </a>
+                <a href="https://www.instagram.com/reel/DSnVPrKE-gl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20 inline-flex"
+                >
                   <Play size={16} />
                   Watch Story
-                </button>
+                </a>
               </MotionDiv>
 
               <MotionDiv variants={fadeUp} className="flex flex-wrap gap-3">

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Sun, Moon } from 'lucide-react';
 
-const Navbar = ({ theme, onToggleTheme }) => {
+const Navbar = ({ theme, onToggleTheme, cartCount = 0 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -65,7 +65,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
           <button className="relative rounded-full border border-white/20 p-2 text-slate-100 transition hover:border-red-300">
             <ShoppingBag size={20} />
             <span className="absolute -right-1 -top-1 rounded-full bg-red-400 px-1.5 text-[10px] font-bold text-slate-900">
-              0
+              {cartCount}
             </span>
           </button>
           <button className="hidden rounded-full border border-white/25 bg-white/10 px-5 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20 md:block">
