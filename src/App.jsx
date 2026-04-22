@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,12 +11,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('citydiner-theme') || 'dark');
-
-  useEffect(() => {
-    localStorage.setItem('citydiner-theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
@@ -24,14 +19,10 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen ${
-        theme === 'dark'
-          ? 'bg-slate-950 text-white'
-          : 'bg-slate-50 text-slate-900'
-      }`}
+      className="min-h-screen bg-slate-950 text-white"
     >
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      
+
       <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
