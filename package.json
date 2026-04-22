@@ -1,16 +1,16 @@
 {
   "name": "citydiner",
-  "homepage": "https://ashik-ch.github.io/city-diner/",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://ashik-ch.github.io/city-diner/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
