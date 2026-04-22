@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
+import FloatingCart from './components/FloatingCart';
+import CartDrawer from './components/CartDrawer';
 import { menuCategories } from './menu.data';
 
 // Pages placeholders
@@ -14,6 +15,7 @@ import Contact from './pages/Contact';
 function App() {
   const [theme, setTheme] = useState('dark');
   const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const menuItemMap = useMemo(() => {
     const entries = menuCategories.flatMap((category) => category.items.map((item) => [item.id, item]));
@@ -33,7 +35,24 @@ function App() {
       }
       return [...prev, { ...item, qty: 1 }];
     });
+    setIsCartOpen(true);
   };
+
+  const removeFromCart = (itemId) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== itemId));
+  };
+
+  const updateQty = (itemId, newQty) => {
+    if (newQty < 1) {
+      removeFromCart(itemId);
+      return;
+    }
+    setCartItems((prev) =>
+      prev.map((item) => (item.id === itemId ? { ...item, qty: newQty } : item))
+    );
+  };
+
+  const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
@@ -57,7 +76,20 @@ function App() {
       </main>
 
       <Footer />
-      <FloatingWhatsApp cartItems={cartItems} />
+      
+      <FloatingCart 
+        cartCount={cartCount} 
+        onClick={() => setIsCartOpen(true)} 
+      />
+
+      <CartDrawer 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        cartItems={cartItems}
+        onUpdateQty={updateQty}
+        onRemoveItem={removeFromCart}
+        total={cartTotal}
+      />
     </div>
   );
 }
