@@ -22,16 +22,12 @@ const Navbar = ({ theme, onToggleTheme }) => {
         : 'border-transparent bg-slate-950/50'
         }`}
     >
-
- 
-
-      <div className="relative z-10 flex justify-between items-center p-6 backdrop-blur-2xl bg-white/5 border border-white/10 rounded-full mx-6 mt-6">
+       <div className="relative z-10 flex justify-between items-center p-6 backdrop-blur-2xl bg-white/5 border border-white/10 rounded-full mx-6 mt-6">
         <NavLink to="/" className="text-lg tracking-widest">  City<span className="text-red-400">Diner</span>
-
         </NavLink>
 
         <div
-          className={`absolute left-0 top-full w-full border-b border-white/10 bg-slate-900/95 p-4 backdrop-blur md:static md:w-auto md:border-none md:bg-transparent md:p-0 ${isMobileMenuOpen ? 'block' : 'hidden md:block'
+          className={`absolute left-0 top-full w-full   p-4   md:static md:w-auto md:border-none  t md:p-0 ${isMobileMenuOpen ? 'block' : 'hidden md:block'
             }`}
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
@@ -46,7 +42,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
                 to={item.to}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition hover:text-cyan-300 ${isActive ? 'text-cyan-400' : 'text-slate-200'
+                  `text-sm font-medium transition hover:text-red-600 ${isActive ? 'text-red-400' : 'text-slate-200'
                   }`
                 }
               >
@@ -71,7 +67,7 @@ const Navbar = ({ theme, onToggleTheme }) => {
               0
             </span>
           </button>
-          <button className="hidden rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 md:block">
+          <button className="hidden rounded-full bg-white/20  px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 md:block">
             Book A Table
           </button>
 
