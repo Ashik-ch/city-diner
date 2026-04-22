@@ -22,13 +22,13 @@ const Navbar = ({ theme, onToggleTheme }) => {
         : 'border-transparent bg-slate-950/50'
         }`}
     >
-      <div className="mx-auto mt-4 flex w-[calc(100%-1.5rem)] max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 backdrop-blur-xl md:mt-5 md:w-[calc(100%-3rem)] md:px-6">
+      <div className="mx-auto mt-4 flex w-[calc(100%-1.5rem)] max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 md:mt-5 md:w-[calc(100%-3rem)] md:px-6">
         <NavLink to="/" className="text-lg font-semibold tracking-widest text-white">
           City<span className="text-red-400">Diner</span>
         </NavLink>
 
         <div
-          className={`absolute left-0 top-[calc(100%+0.5rem)] w-full rounded-2xl border border-white/10 bg-slate-900/95 p-4 shadow-xl backdrop-blur-xl md:static md:w-auto md:border-none md:bg-transparent md:p-0 md:shadow-none ${isMobileMenuOpen ? 'block' : 'hidden md:block'
+          className={`absolute left-0 top-[calc(100%+0.5rem)] w-full rounded-2xl border border-white/10 p-4 shadow-xl  md:static md:w-auto md:border-none md:bg-transparent md:p-0 md:shadow-none ${isMobileMenuOpen ? 'block' : 'hidden md:block'
             }`}
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
