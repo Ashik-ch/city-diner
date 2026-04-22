@@ -9,6 +9,12 @@
   display: flex;
   align-items: center;
   gap: 60px;
+  padding: 40px;
+  border-radius: 28px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px);
 }
 
 .about-image {
@@ -20,7 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #222, #111);
+  background: radial-gradient(circle at center, rgba(34, 34, 34, 0.9), rgba(17, 17, 17, 0.75));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .ambiance-img {
@@ -65,7 +73,7 @@
 .about-stats {
   display: flex;
   gap: 40px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--glass-border);
   padding-top: 30px;
 }
 
@@ -85,6 +93,7 @@
 @media (max-width: 1024px) {
   .about-wrapper {
     flex-direction: column-reverse;
+    padding: 24px;
   }
   
   .about-image {

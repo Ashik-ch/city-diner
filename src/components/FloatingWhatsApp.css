@@ -4,13 +4,13 @@
   right: 30px;
   width: 60px;
   height: 60px;
-  background-color: #25D366;
+  background: linear-gradient(140deg, rgba(37, 211, 102, 0.95), rgba(29, 185, 84, 0.9));
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35), var(--glass-shadow);
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -24,8 +24,8 @@
 .wa-tooltip {
   position: absolute;
   right: 75px;
-  background: rgba(15, 15, 17, 0.9);
-  color: white;
+  background: var(--glass-bg);
+  color: var(--text-primary);
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -36,6 +36,7 @@
   white-space: nowrap;
   pointer-events: none;
   border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
 }
 
 .floating-wa:hover .wa-tooltip {

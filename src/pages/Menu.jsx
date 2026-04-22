@@ -17,7 +17,9 @@ const Menu = () => {
 
       {/* LEFT SIDEBAR */}
       <aside className="menu-sidebar">
-        <h2 className="sidebar-title">Menu</h2>
+        <div className="sidebar-header">
+          <h2 className="sidebar-title">Menu</h2>
+        </div>
 
         <div className="sidebar-list">
           {menuCategories.map((cat) => (

@@ -1,8 +1,10 @@
 .footer {
-  background: var(--bg-secondary);
+  background: var(--glass-bg);
   padding: 80px 0 24px;
   border-top: 1px solid var(--glass-border);
   margin-top: 60px;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--glass-shadow);
 }
 
 .footer-grid {
@@ -36,7 +38,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,11 +113,11 @@
 }
 
 .newsletter-form input {
-  background: rgba(255,255,255,0.05);
+  background: var(--bg-card);
   border: 1px solid var(--glass-border);
   padding: 14px 20px;
   border-radius: 50px;
-  color: white;
+  color: var(--text-primary);
   font-family: var(--font-sans);
   outline: none;
   transition: border-color 0.3s ease;
@@ -128,8 +130,8 @@
 .footer-bottom {
   text-align: center;
   padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  color: #666;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 

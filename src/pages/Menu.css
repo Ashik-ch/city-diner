@@ -1,30 +1,23 @@
 :root {
-  --text: #0f172a;
-  --muted: rgba(15, 23, 42, 0.65);
-  --glass: rgba(255, 255, 255, 0.10);
-  --stroke: rgba(255, 255, 255, 0.15);
-
+  
   --a1: #ffffff;
   --a2: #acb2b8;
   --a3: #d8ff4d;
 }
 
-/* BACKGROUND (WOW cinematic glow) */
-body {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 45, 117, 0.05), transparent 40%),
-    radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.03), transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(124, 77, 255, 0.02), transparent 50%),
-    linear-gradient(135deg, #0b0f1a 0%, #0f172a 100%);
-  color: white;
-  font-family: Inter, sans-serif;
-}
-/* HERO */.menu-layout {
+.menu-layout {
   display: flex;
   padding: 150px 0 100px;
-
   min-height: 100vh;
-  
+  color: var(--text-primary);
+  font-family: Inter, sans-serif;
+  --text-color: var(--text-primary);
+  --muted-color: var(--text-secondary);
+  --glass-stroke: var(--glass-border);
+  --card-bg: var(--glass-bg);
+  --price-bg: var(--glass-strong);
+  --active-text: #081022;
+  --button-text: var(--text-dark);
 }
 
 /* SIDEBAR */
@@ -35,14 +28,22 @@ body {
   top: 0;
   height: 100vh;
 
-  background: rgba(255,255,255,0.05);
+  background: var(--glass-bg);
   backdrop-filter: blur(18px);
-  border-right: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid var(--glass-stroke);
+  box-shadow: var(--glass-shadow);
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .sidebar-title {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 0;
   opacity: 0.8;
 }
 
@@ -57,8 +58,8 @@ body {
   padding: 12px;
   border-radius: 12px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.08);
-  color: white;
+  border: 1px solid var(--glass-stroke);
+  color: var(--text-color);
   cursor: pointer;
   text-align: left;
   transition: 0.3s;
@@ -66,12 +67,12 @@ body {
 
 .sidebar-item:hover {
   transform: translateX(5px);
-  background: rgba(255,255,255,0.08);
+  background: var(--glass-bg);
 }
 
 .sidebar-item.active {
-  background: linear-gradient(90deg,  var(--a1), var(--a2));
-  color: black;
+  background: white;
+  color: #081022;
   font-weight: 600;
 }
 
@@ -89,7 +90,7 @@ body {
 .menu-hero span {
   font-size: 12px;
   letter-spacing: 2px;
-  opacity: 0.6;
+  color: var(--muted-color);
 }
 
 .menu-hero h1 {
@@ -104,7 +105,7 @@ body {
 }
 
 .menu-hero p {
-  opacity: 0.6;
+  color: var(--muted-color);
   margin-top: 6px;
 }
 
@@ -117,12 +118,13 @@ body {
 
 /* CARD */
 .menu-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--glass-stroke);
   border-radius: 18px;
   overflow: hidden;
   backdrop-filter: blur(15px);
   transition: 0.3s;
+  box-shadow: var(--glass-shadow);
 }
 
 .menu-card:hover {
@@ -152,10 +154,12 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.6);
+  background: var(--price-bg);
+  color: var(--text-color);
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
+  border: 1px solid var(--glass-stroke);
 }
 
 /* CONTENT */
@@ -169,7 +173,7 @@ body {
 
 .content p {
   font-size: 12px;
-  opacity: 0.7;
+  color: var(--muted-color);
   margin-top: 5px;
 }
 
@@ -183,7 +187,7 @@ body {
   cursor: pointer;
 
   background: linear-gradient(90deg, var(--a1), var(--a2));
-  color: black;
+  color: var(--button-text);
   font-weight: 600;
 }
 
@@ -197,11 +201,268 @@ body {
     width: 100%;
     height: auto;
     position: relative;
-    display: flex;
-    overflow-x: auto;
+    overflow-x: visible;
   }
 
   .sidebar-list {
     flex-direction: row;
+    overflow-x: auto;
+  }
+}
+
+/* ==================================================
+   HERO RIGHT SIDE – PREMIUM CUSTOM DESIGN
+================================================== */
+
+.hero-right {
+  position: relative;
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  isolation: isolate;
+}
+
+/* ---------------- BACK GLOW ---------------- */
+.hero-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,211,238,.28), transparent 65%);
+  filter: blur(60px);
+  animation: pulseGlow 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%,100% {
+    transform: scale(1);
+    opacity: .75;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+/* ---------------- RINGS ---------------- */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.12);
+  z-index: 1;
+}
+
+.ring-1 {
+  width: 430px;
+  height: 430px;
+  border-style: dashed;
+  animation: spinRing 22s linear infinite;
+}
+
+.ring-2 {
+  width: 520px;
+  height: 520px;
+  border-color: rgba(255,255,255,.06);
+  animation: spinReverse 28s linear infinite;
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* ---------------- MAIN CARD ---------------- */
+.food-showcase {
+  position: relative;
+  width: 340px;
+  height: 470px;
+  border-radius: 34px;
+  overflow: hidden;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.food-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+
+.food-showcase:hover img {
+  transform: scale(1.08);
+}
+
+/* overlay */
+.food-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,0));
+}
+
+.food-overlay h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.food-overlay p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+}
+
+/* ---------------- PRICE BADGE ---------------- */
+.price-badge {
+  position: absolute;
+  top: 95px;
+  right: 25px;
+  z-index: 10;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+}
+
+/* ---------------- RATING BOX ---------------- */
+.rating-box {
+  position: absolute;
+  bottom: 90px;
+  left: 10px;
+  z-index: 10;
+  padding: 14px 20px;
+  border-radius: 18px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+}
+
+/* ---------------- FLOATING DOTS ---------------- */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  box-shadow: 0 0 20px rgba(34,211,238,.5);
+  z-index: 3;
+}
+
+.dot-1 {
+  width: 14px;
+  height: 14px;
+  top: 110px;
+  left: 40px;
+  animation: floatDot 5s ease-in-out infinite;
+}
+
+.dot-2 {
+  width: 10px;
+  height: 10px;
+  bottom: 140px;
+  right: 40px;
+  animation: floatDot 6s ease-in-out infinite;
+}
+
+.dot-3 {
+  width: 18px;
+  height: 18px;
+  bottom: 70px;
+  left: 90px;
+  animation: floatDot 7s ease-in-out infinite;
+}
+
+@keyframes floatDot {
+  0%,100% {
+    transform: translateY(0);
+    opacity: .8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 992px) {
+  .hero-right {
+    height: 520px;
+    margin-top: 40px;
+  }
+
+  .food-showcase {
+    width: 290px;
+    height: 400px;
+  }
+
+  .ring-1 {
+    width: 360px;
+    height: 360px;
+  }
+
+  .ring-2 {
+    width: 430px;
+    height: 430px;
+  }
+
+  .price-badge {
+    top: 70px;
+    right: 10px;
+    font-size: 16px;
+  }
+
+  .rating-box {
+    left: 0;
+    bottom: 60px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-right {
+    height: 470px;
+  }
+
+  .food-showcase {
+    width: 260px;
+    height: 360px;
+  }
+
+  .ring-1 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .ring-2 {
+    width: 380px;
+    height: 380px;
+  }
+
+  .price-badge,
+  .rating-box {
+    transform: scale(.92);
   }
 }
