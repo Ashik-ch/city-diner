@@ -23,10 +23,16 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark'
+          ? 'bg-slate-950 text-white'
+          : 'bg-slate-50 text-slate-900'
+      }`}
+    >
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
       
-      <main>
+      <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />

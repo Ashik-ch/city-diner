@@ -1,5 +1,4 @@
 import { MessageCircle } from 'lucide-react';
-import './FloatingWhatsApp.css';
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "971501234567"; // Replace with actual number
@@ -8,9 +7,16 @@ const FloatingWhatsApp = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="floating-wa">
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-105 hover:bg-green-600"
+    >
       <MessageCircle size={32} />
-      <span className="wa-tooltip">Order on WhatsApp</span>
+      <span className="pointer-events-none absolute right-16 whitespace-nowrap rounded-md bg-slate-900 px-3 py-1 text-xs text-white opacity-0 transition group-hover:opacity-100">
+        Order on WhatsApp
+      </span>
     </a>
   );
 };
