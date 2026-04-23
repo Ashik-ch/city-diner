@@ -127,16 +127,12 @@ const CartDrawer = ({ isOpen, onClose, cartItems, onUpdateQty, onRemoveItem, tot
               <div className="border-t border-white/10 bg-slate-900/50 p-6 space-y-4">
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm text-slate-400">
-                    <span>Subtotal</span>
-                    <span>AED {total.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between text-sm text-slate-400">
-                    <span>Tax (5%)</span>
-                    <span>AED {(total * 0.05).toFixed(2)}</span>
+                    <span>Count :</span>
+                    <span>{cartItems.length}</span>
                   </div>
                   <div className="flex justify-between border-t border-white/10 pt-2 text-xl font-bold text-white">
                     <span>Total</span>
-                    <span>AED {(total * 1.05).toFixed(2)}</span>
+                    <span>AED {(total).toFixed(2)}</span>
                   </div>
                 </div>
 

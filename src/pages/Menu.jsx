@@ -5,7 +5,7 @@ import bgImage from "../assets/bgImage3.jpg";
 
 const Menu = ({ onAddToCart }) => {
   console.log("onAddToCart");
-  
+
   const MotionDiv = motion.div;
   const [activeCategory, setActiveCategory] = useState(
     menuCategories[0].name
@@ -61,7 +61,7 @@ const Menu = ({ onAddToCart }) => {
           </header>
 
           {/* GRID (ONLY ACTIVE CATEGORY ITEMS) */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {activeData?.items?.map((item, index) => (
               <MotionDiv
                 key={item.id}
