@@ -1,0 +1,18 @@
+export const homeMenu = [
+  { id: 1, name: "Chicken Lollipop", price: 19, currency: 'AED', desc: "Crispy fried chicken wings pulled into a lollipop shape", img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 2, name: "Dragon Chicken", price: 25, currency: 'AED', desc: "Spicy and tangy Indo-Chinese style chicken", img: "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 3, name: "Chicken 65", price: 18, currency: 'AED', desc: "Deep-fried spicy chicken tempered with curry leaves", img: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 4, name: "Hot N Sour Chicken", price: 17, currency: 'AED', desc: "Spicy and tangy chicken broth", img: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 5, name: "Arabic Salad", price: 16, currency: "AED", desc: "Fresh middle-eastern garden salad", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=600", veg: true },
+  { id: 6, name: "Chicken Charcoal", price: 27, currency: "AED", desc: "Traditional slow-grilled charcoal chicken", img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 7, name: "Mix Grill", price: 46, currency: "AED", desc: "Platter of kebabs, tikkas, and grilled meats", img: "https://images.unsplash.com/photo-1655365225165-8bc92cbfa4e8?auto=format&fit=crop&q=80&w=600", veg: false }
+  , { id: 8, name: "Chicken Biriyani", price: 16, currency: 'AED', desc: "Fragrant basmati rice with spiced chicken", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 9, name: "Veg Biriyani", price: 15, currency: 'AED', desc: "Seasonal vegetables layered with saffron rice", img: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&q=80&w=600", veg: true }
+  , { id: 10, name: "Butter Chicken", price: 20, currency: 'AED', desc: "Creamy tomato-based chicken curry", img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=600", veg: false },
+  , { id: 11, name: "Mutton Rogan Josh", price: 26, currency: 'AED', desc: "Slow-cooked mutton in aromatic gravy", img: "https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&q=80&w=600", veg: false },
+  { id: 12, name: "Paneer Butter Masala", price: 19, currency: 'AED', desc: "Soft paneer cubes in a rich makhani gravy", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=600", veg: true }
+  , { id: 13, name: "Zinger Burger", price: 16, currency: 'AED', desc: "Crunchy spicy chicken fillet burger", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=600", veg: false },
+  , { id: 14, name: "Zinger Wrap", price: 18, currency: 'AED', desc: "Spicy zinger strips in a soft tortilla", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&q=80&w=600", veg: false }
+  , { id: 15, name: "Blue Lagoon Mojito", price: 18, currency: 'AED', desc: "Refreshing blue curacao mixed with lime", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600", veg: true },
+  , { id: 16, name: "Faloodah", price: 16, currency: 'AED', desc: "Royal layered dessert with nuts and ice cream", img: "https://images.unsplash.com/photo-1572302083913-2c1b0a16bb1c?auto=format&fit=crop&q=80&w=600", veg: true }
+];

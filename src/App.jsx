@@ -64,7 +64,12 @@ function App() {
     <div
       className="min-h-screen bg-slate-950 text-white"
     >
-      <Navbar theme={theme} onToggleTheme={toggleTheme} cartCount={cartCount} />
+      <Navbar 
+        theme={theme} 
+        onToggleTheme={toggleTheme} 
+        cartCount={cartCount} 
+        onOpenCart={() => setIsCartOpen(true)} 
+      />
 
       <main className="pt-20">
         <Routes>

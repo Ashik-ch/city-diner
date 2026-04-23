@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="border-t border-white/15 bg-white/5 backdrop-blur-xl">
       <div className="mx-auto w-full max-w-7xl px-4 py-14">
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
-          <div>
+        <div className="grid gap-10 text-center md:grid-cols-2 md:text-left xl:grid-cols-4">
+          <div className="flex flex-col items-center md:items-start">
             <h2 className="text-2xl font-bold text-white">
               City<span className="text-red-400">Diner</span>
             </h2>
@@ -37,15 +37,15 @@ const Footer = () => {
 
           <div className="space-y-3">
             <h3 className="text-lg font-semibold text-white">Contact Us</h3>
-            <div className="flex items-start gap-2 text-slate-300">
+            <div className="flex items-start justify-center gap-2 text-slate-300 md:justify-start">
               <MapPin size={18} className="mt-0.5 text-red-300" />
               <p>Bur Dubai, United Arab Emirates</p>
             </div>
-            <div className="flex items-start gap-2 text-slate-300">
+            <div className="flex items-start justify-center gap-2 text-slate-300 md:justify-start">
               <Phone size={18} className="mt-0.5 text-red-300" />
               <p>+971 50 123 4567</p>
             </div>
-            <div className="flex items-start gap-2 text-slate-300">
+            <div className="flex items-start justify-center gap-2 text-slate-300 md:justify-start">
               <Mail size={18} className="mt-0.5 text-red-300" />
               <p>info@citydiner.ae</p>
             </div>
@@ -54,7 +54,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white">Newsletter</h3>
             <p className="mt-2 text-slate-300">Subscribe for exclusive offers and updates.</p>
-            <form className="mt-4 flex gap-2">
+            <form className="mt-4 flex flex-col gap-2 sm:flex-row">
               <input
                 type="email"
                 placeholder="Your Email Address"
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-5 text-sm text-slate-400">
+        <div className="mt-10 border-t border-white/10 pt-5 text-center text-[10px] text-slate-400 sm:text-xs">
           <p>&copy; {new Date().getFullYear()} Version {version}. City Diner. All rights reserved.</p>
         </div>
       </div>
