@@ -1,7 +1,7 @@
 {
   "name": "citydiner",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.1",
   "type": "module",
   "homepage": "https://ashik-ch.github.io/city-diner/",
   "scripts": {
